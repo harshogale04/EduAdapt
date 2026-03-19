@@ -4,10 +4,10 @@
 
 // --- CONFIG ---
 // Replace with your actual Vercel deployment URL after deploying
-const PROXY_URL = "https://eduadapt-api.vercel.app/api/rewrite";
+const PROXY_URL = "https://eduadapt67.vercel.app/api/rewrite";
 
 // Shared secret — must match EXTENSION_SECRET in your Vercel env vars
-const EXTENSION_SECRET = "eduadapt-2024-xyz";
+const EXTENSION_SECRET = "eduadapt-secret-123";
 
 const cache = new Map(); // Simple in-memory cache
 
