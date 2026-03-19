@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EduAdapt</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      width: 300px;
+      padding: 20px;
+      background: #f9f9fb;
+      color: #1a1a2e;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    header h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #4f46e5;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #fff;
+      margin-bottom: 14px;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    select:focus { border-color: #4f46e5; }
+
+    .profile-toggle {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .profile-toggle button {
+      flex: 1;
+      padding: 8px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #555;
+    }
+
+    .profile-toggle button.active {
+      border-color: #4f46e5;
+      background: #eef2ff;
+      color: #4f46e5;
+    }
+
+    .support-levels {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .support-levels button {
+      flex: 1;
+      padding: 6px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #555;
+      transition: all 0.2s;
+    }
+
+    .support-levels button.active {
+      border-color: #10b981;
+      background: #ecfdf5;
+      color: #10b981;
+    }
+
+    #transform-btn {
+      width: 100%;
+      padding: 11px;
+      background: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 10px;
+    }
+
+    #transform-btn:hover { background: #4338ca; }
+    #transform-btn:disabled { background: #a5b4fc; cursor: not-allowed; }
+
+    #restore-btn {
+      width: 100%;
+      padding: 8px;
+      background: transparent;
+      color: #888;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    #restore-btn:hover { color: #4f46e5; border-color: #4f46e5; }
+
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      color: #10b981;
+      min-height: 18px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 14px 0;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎓 EduAdapt</h1>
+  </header>
+
+  <div class="section-title">Student Profile</div>
+
+  <label>Grade Level</label>
+  <select id="grade">
+    <option value="1">Grade 1–2 (Ages 6–8)</option>
+    <option value="3">Grade 3–4 (Ages 8–10)</option>
+    <option value="5" selected>Grade 5–6 (Ages 10–12)</option>
+    <option value="7">Grade 7–8 (Ages 12–14)</option>
+    <option value="9">Grade 9–10 (Ages 14–16)</option>
+  </select>
+
+  <label>Profile</label>
+  <div class="profile-toggle">
+    <button id="btn-dyslexia" class="active" data-profile="dyslexia">📖 Dyslexia</button>
+    <button id="btn-adhd" data-profile="adhd">⚡ ADHD</button>
+  </div>
+
+  <label>Support Level</label>
+  <div class="support-levels">
+    <button id="btn-light" data-level="light">Light</button>
+    <button id="btn-moderate" class="active" data-level="moderate">Moderate</button>
+    <button id="btn-full" data-level="full">Full</button>
+  </div>
+
+  <hr class="divider" />
+
+  <button id="transform-btn">✨ Transform Page</button>
+  <button id="restore-btn">↩ Restore Original</button>
+
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "eduadapt-api",
+  "version": "1.0.0",
+  "description": "EduAdapt serverless API proxy for Gemini",
+  "type": "module"
+}
